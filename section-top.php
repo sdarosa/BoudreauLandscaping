@@ -17,5 +17,5 @@
         <script src="js/bootstrap.js"></script>   
         <script src="js/alert.js"></script>
         <script src="js/app.js"></script>
-        <script src="js/ekko-lightbox.js"></script>
+        <script src="js/ekko-lightbox.js"></script>        
     </head>
