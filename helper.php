@@ -1,5 +1,18 @@
 <?php
 
+//returns an array of directory names in a given path
+function getImageDirectories($path) {
+    $elements = scandir($path);
+    $directories = [];    
+    foreach($elements as $e) {
+        if($e == '.' || $e == '..') continue;
+        if(is_dir($path . '/' . $e)) {
+            array_push($directories, $e);
+        }
+    }    
+    return $directories;     
+}
+
 function getAllImageNames($path) {
     //'images/portfolio/thumbnails'
     $directory = $path;

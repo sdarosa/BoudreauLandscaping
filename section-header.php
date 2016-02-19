@@ -1,3 +1,4 @@
+<?php require 'helper.php' ?>
 <body>
         <header>
 			<nav class="navbar navbar-fixed-top">
@@ -33,7 +34,7 @@
                               <ul class="dropdown-menu">
                                 <li><a href="allwork.php">All Work</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="work.php#patios">Patios and Walkways</a></li>
+                                <li><a href="patios_walkways.php">Patios and Walkways</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="work.php#steps">Steps</a></li>
                                 <li role="separator" class="divider"></li>

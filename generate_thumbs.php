@@ -1,20 +1,21 @@
 <?php
 require 'helper.php';
 
-$files = getAllImageNames('images/portfolio');
+$path = 'images/portfolio/patios_walkways';
+$files = getAllImageNames($path);
 
 //extend the maximum execution time
 ini_set('max_execution_time', 300); //5 minutes
 
-if(!isDirEmpty('images/portfolio/thumbnails')) {    
+if(!isDirEmpty($path . '/thumbnails')) {    
     //delete contents on thumbnails folder
-    deleteFiles('images/portfolio/thumbnails');
+    deleteFiles($path . '/thumbnails');
 } 
 
 //$x = 0;
 
 foreach($files as $imgName) {
-    imageResize('images/portfolio/' . $imgName, $imgName, 'images/portfolio/thumbnails/'); 
+    imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/'); 
 //    $x++;
 //    if($x == 40) break;
 }
