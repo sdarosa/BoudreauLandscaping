@@ -1,7 +1,9 @@
 <?php
 require 'helper.php';
 
-$path = 'images/portfolio/patios_walkways';
+$path = 'images/portfolio/Walls';
+$width = 400;
+$height = 300;
 $files = getAllImageNames($path);
 
 //extend the maximum execution time
@@ -12,12 +14,10 @@ if(!isDirEmpty($path . '/thumbnails')) {
     deleteFiles($path . '/thumbnails');
 } 
 
-//$x = 0;
+
 
 foreach($files as $imgName) {
-    imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/'); 
-//    $x++;
-//    if($x == 40) break;
+    imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height); 
 }
 
 $result = array(

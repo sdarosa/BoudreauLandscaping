@@ -17,18 +17,19 @@ function getAllImageNames($path) {
     //'images/portfolio/thumbnails'
     $directory = $path;
     $files =  scandir($directory);
+    $image_names = [];
 
-    for($x=0; $x < count($files); $x++) {
-        $file_extension = strtolower(substr($files[$x], -3));
-        if(($file_extension !== 'jpg') && ($file_extension !== 'png') && ($file_extension !== 'gif')) {    
-            unset($files[$x]);              
+    for($x=0; $x < count($files); $x++) { 
+        $file_extension = strtolower(substr($files[$x], -3));        
+        if(($file_extension == 'jpg') || ($file_extension == 'png') || ($file_extension == 'gif')) {    
+            array_push($image_names, $files[$x]);         
         }
-    }   
-    $files = array_values($files); //normalize the array (delete the indexes that have no values)
-    return $files;
+    }  
+    
+    return $image_names;
 }
 
-function imageResize($image, $new_filename, $dest_path) {      
+function imageResize($image, $new_filename, $dest_path, $w, $h) {      
     //check if gd extension is loaded
     if(!extension_loaded('gd') && !extension_loaded('gd2')) {
         trigger_error('gd is not loaded', E_USER_WARNING);
@@ -51,8 +52,8 @@ function imageResize($image, $new_filename, $dest_path) {
             break;            
     }
     
-    $width = 400;
-    $height = 300;
+    $width = $w;
+    $height = $h;
     $ratio_orig = $width_orig / $height_orig;
     if ($width/$height > $ratio_orig) {
        $width = $height*$ratio_orig;
@@ -60,8 +61,8 @@ function imageResize($image, $new_filename, $dest_path) {
        $height = $width/$ratio_orig;
     }  
    
-    $new_image = imagecreatetruecolor(400, 300);
-    imagecopyresampled($new_image, $im, 0, 0, 0, 0, 400, 300, $width_orig, $height_orig); 
+    $new_image = imagecreatetruecolor($w, $h);
+    imagecopyresampled($new_image, $im, 0, 0, 0, 0, $w, $h, $width_orig, $height_orig); 
     
     //generate new file, and rename it to $new_filename
     switch($image_type) {
