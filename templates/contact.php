@@ -11,7 +11,7 @@
                         <p><span class="red">Phone: </span>(978) 627-0232</p>
                     </div>
                     <div class="col-md-4">
-                        <p><span class="red">&nbsp;&nbsp;email:</span> info@boudreaubros.com</p>
+                        <p><span class="red">email:</span> info@boudreaubros.com</p>
                     </div>
                 </div>                
             </div>

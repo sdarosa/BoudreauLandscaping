@@ -5,6 +5,9 @@
         <group>
             <file>file:/E:/dev/tools/xampp/htdocs/BoudreauLandscaping/templates/index.php</file>
             <file>file:/E:/dev/tools/xampp/htdocs/BoudreauLandscaping/css/main.css</file>
+            <file>file:/E:/dev/tools/xampp/htdocs/BoudreauLandscaping/section-header.php</file>
+            <file>file:/E:/dev/tools/xampp/htdocs/BoudreauLandscaping/js/app.js</file>
+            <file>file:/E:/dev/tools/xampp/htdocs/BoudreauLandscaping/templates/about.php</file>
         </group>
     </open-files>
 </project-private>

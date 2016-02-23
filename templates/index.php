@@ -11,7 +11,7 @@
           <div class="carousel-inner" role="listbox">
             <div class="item active">
               <img src="images/hero01.jpg" alt="landscape image">
-              <div class="carousel-caption left">
+              <div class="carousel-caption left hidden-xs">
                 <h3>THIS SPRING</h3>
                 <p>Make Your Dream Garden Come True!<br/>Get a Free Quote Now!</p>
                 <a type="button" class="btn btn-danger">Contact Us</a>
@@ -64,9 +64,9 @@
         </div>
         
         <!-- Most Recent Work -->
-        <div id="recent-work-section">
+        <div id="recent-work-section" class="hidden-xs">
             <div class="container">
-                <h1>MOST RECENT <span class="red">WORK</span></h1>                
+                <h1>MOST RECENT <span class="red">WORK</span></h1>  
                 <ul class="caption-style">
                     <li>
                         <a href="?action=allwork.php">
@@ -135,5 +135,34 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+        </div>
+        
+        <div id="recent-work-section" class="visible-xs">
+            <div class="container">
+                <h1>MOST RECENT <span class="red">WORK</span></h1>
+                <div class="row">
+                    <div class="col-xs-6 thumb">
+                        <a class="thumbnail" href="?action=allwork.php">
+                            <img class="img-responsive" src="images/thumb_project011.jpg">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 thumb">
+                        <a class="thumbnail" href="?action=allwork.php">
+                            <img class="img-responsive" src="images/thumb_project021.jpg">
+                        </a>
+                    </div>
+                    <div class="col-xs-6 thumb">
+                        <a class="thumbnail" href="?action=allwork.php">
+                            <img class="img-responsive" src="images/thumb_project031.jpg">
+                        </a>
+                    </div>
+                   <div class="col-xs-6 thumb">
+                        <a class="thumbnail" href="?action=allwork.php">
+                            <img class="img-responsive" src="images/thumb_project041.jpg">
+                        </a>
+                    </div>
+                    
+                </div>
             </div>
         </div>

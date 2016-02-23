@@ -21,6 +21,9 @@ h2 {
 .red {
     color: #c41330;
 }
+.gray-bg {
+    background: #f4f4f4;
+}
 a.thumbnail:hover {
     border-color: #b4b4b4;
 }
@@ -46,7 +49,7 @@ a.navbar-brand {
 }
 ul.nav.navbar-nav.navbar-right {
     font-size: 1.1em;
-    height: 70px;
+    
 }
 ul.nav.navbar-nav.navbar-right a{
     color: #333;
@@ -150,8 +153,7 @@ p.navbar-text img{
 }
 #recent-work-section .caption-style img {
     margin: 0;
-    padding: 0;
-    float: left;
+    padding: 0;    
     z-index: 4;
 }
 #recent-work-section .caption-style .caption {
@@ -299,6 +301,57 @@ p.navbar-text img{
     #gallery-section {
         min-height: 840px;
     }
+}
+@media(max-width: 767px) {    
+    #boudreaunavbar.navbar-collapse.in {         
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.5);    
+    }
+    button.navbar-toggle {
+        top: 10px;
+        margin-bottom: 15px;
+    }
+    .navbar-collapse {
+        position: absolute;
+        width: 100%;   
+        max-height: none;
+        z-index: 999;
+    }
+    .navbar-nav .open .dropdown-menu {
+        background-color: #f6f6f6;
+    }    
+    .navbar-nav .open .dropdown-menu > li > a {
+        background-color: #f6f6f6;
+    }    
+    .navbar.navbar-fixed-top {
+        height: 70px;
+    }
+    .logo {
+        width: 160px;
+    }    
+    /* carousel */
+    #carousel-example-generic {
+        top: 70px;
+    }
+    
+    #services-section img {
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+    #construction img, #maintenance img, #snowmanagement img {        
+        width: 200px;   
+    }
+    #footer-section {
+        text-align: center!important;
+        padding-top: 40px;        
+    }
+    #footer-section ul li {
+        margin: 0;
+        padding: 0 5px;
+    }
+        
 }
 
 
