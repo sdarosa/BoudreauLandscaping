@@ -3,6 +3,7 @@ require_once './Paginator.php';
 
 //setup the paginator
 $action = (isset($_GET['action'])) ? basename($_GET['action']) : 'bef_after.php';
+$type = 'Before and After';
 $limit = (isset($_GET['limit'])) ? $_GET['limit'] : 20;
 $page = (isset($_GET['page'])) ? $_GET['page'] : 1;
 $links = (isset($_GET['links'])) ? $_GET['links'] : 5; 
@@ -13,7 +14,7 @@ $result = $Paginator->getData($limit, $page);
 <!-- page content -->
 <div id="gallery-section">
     <div class="container" ng-controller="imgController">
-        <h1><span class="red">BEFORE</span> AND <span class="red">AFTER</span></h1>                
+        <h1 class="text-uppercase"><?php echo $type?></h1>                
         <div class="row">
             <?php for($i= 0; $i < count($result->data); $i++) { 
                 $after = "after";
@@ -34,6 +35,6 @@ $result = $Paginator->getData($limit, $page);
                     </div>
             <?php }} ?>
         </div>
-        <?php echo $Paginator->createLinks($links, 'pagination', $action); ?>
+        <?php echo $Paginator->createLinks($links, 'pagination', $action, $type); ?>
     </div>
 </div>

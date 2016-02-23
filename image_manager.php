@@ -17,6 +17,8 @@
         </div>
         <hr/>
         <p>Generate thumbnails based on the existing images</p>
+        <p>Note: The global folder is 'images/portfolio/' You just need to specify its subfolder (i.e. 'Before and After')</p>
+        <input type="text" id="thumbnailpath" placeholder="Testing">
         <button type="button" id="thumbgenerator" class="btn btn-default" value="Generate Thumbnails" data-loading-text="Loading..." autocomplete="off">
             Generate Thumbnails
         </button><br/>
@@ -28,11 +30,15 @@
     <script>
         $(document).ready(function() {
             $('#thumbgenerator').click(function() {
-                var $btn = $(this).button('loading');               
+                var $btn = $(this).button('loading');     
+                var $folderName = $('#thumbnailpath').val();
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     url: 'generate_thumbs.php',
+                    data: {
+                        folderName : $folderName
+                    },
                     success: function(data) {    
                         $('#alertsection').removeClass('alert-danger');
                         $('#alertsection').addClass('alert-success');

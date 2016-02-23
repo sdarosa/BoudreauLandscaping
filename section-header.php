@@ -32,14 +32,15 @@
                     <li class="dropdown">
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">WORK<span class="caret"></span></a>
                       <ul class="dropdown-menu">
-                        <li><a href="?action=allwork.php">All Work</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="?action=patios_walkways.php">Patios and Walkways</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="?action=steps.php">Steps</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="?action=walls.php">Walls and Retaining Walls</a></li> 
-                        <li role="separator" class="divider"></li>
+                        <?php
+                            $directories = getImageDirectories("images/portfolio");
+                            foreach($directories as $d) {
+                                if($d != "Before and After") { ?>
+                                    <li><a href="?action=galleries.php&type=<?php echo $d; ?>"><?php echo $d; ?></a></li>
+                                    <li role="separator" class="divider"></li>                                    
+                        <?php   }
+                            }                          
+                        ?>                       
                         <li><a href="?action=bef_after.php">Before and After</a></li>
                       </ul>
                     </li>                            
