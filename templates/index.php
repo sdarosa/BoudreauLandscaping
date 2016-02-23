@@ -14,7 +14,7 @@
               <div class="carousel-caption left hidden-xs">
                 <h3>THIS SPRING</h3>
                 <p>Make Your Dream Garden Come True!<br/>Get a Free Quote Now!</p>
-                <a type="button" class="btn btn-danger">Contact Us</a>
+                <a type="button" class="btn btn-danger" href="?action=contact.php">Contact Us</a>
               </div>
             </div>
             <div class="item">
