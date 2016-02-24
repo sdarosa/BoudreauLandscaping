@@ -69,7 +69,7 @@
                 <h1>MOST RECENT <span class="red">WORK</span></h1>  
                 <ul class="caption-style">
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project01.jpg" />                        
                         <div class="caption">
                             <div class="blur"></div>
@@ -80,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project02.jpg" />
                         <div class="caption">
                             <div class="blur"></div>
@@ -91,7 +91,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project03.jpg" />
                         <div class="caption">
                             <div class="blur"></div>
@@ -102,7 +102,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project04.jpg" />
                         <div class="caption">
                             <div class="blur"></div>
@@ -113,7 +113,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project05.jpg" />
                         <div class="caption">
                             <div class="blur"></div>
@@ -124,7 +124,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="?action=allwork.php">
+                        <a href="?action=galleries.php&type=All%20Work">
                         <img src="images/thumb_project06.jpg" />
                         <div class="caption">
                             <div class="blur"></div>

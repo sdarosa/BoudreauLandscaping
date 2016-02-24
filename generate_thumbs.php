@@ -1,7 +1,9 @@
 <?php
 require 'helper.php';
 
-$path = 'images/portfolio/Walls';
+$global_path = 'images/portfolio/';
+$folder = isset($_POST['folderName']) ? $_POST['folderName'] : 'Testing';
+$path = $global_path . $folder;
 $width = 400;
 $height = 300;
 $files = getAllImageNames($path);
@@ -9,15 +11,18 @@ $files = getAllImageNames($path);
 //extend the maximum execution time
 ini_set('max_execution_time', 300); //5 minutes
 
-if(!isDirEmpty($path . '/thumbnails')) {    
-    //delete contents on thumbnails folder
-    deleteFiles($path . '/thumbnails');
-} 
-
-
+if(!file_exists($path . '/thumbnails')) {
+    echo "directory thumbnails doesn't exist";
+    mkdir($path . '/thumbnails');
+    if(file_exists($path . '/thumbnails')) {
+        echo "directory created successfully.";
+    }
+}
 
 foreach($files as $imgName) {
-    imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height); 
+    if(!file_exists($path . '/thumbnails/' . $imgName)) {
+        imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height); 
+    }    
 }
 
 $result = array(

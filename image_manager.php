@@ -8,20 +8,33 @@
     <div class="container text-center">
         <h1>Image Manager</h1>  
         <hr/>
-        <p>Rotates images whose orientation is not correct.</p>
+        <h3>Rotates Images</h3>
+        <p>Rotates images if orientation is not correct.</p>        
         <button type="button" id="imageorientationcorrector" class="btn btn-default" data-loading-text="Loading..." autocomplete="off">
-            Correct Image Orientation
-        </button><br/>
+            Correct Image Orientation</button>
+        <br/>
         <div id="imageorientationalert" class="alert" role="alert">
             <p class="imageorientationresult"></p>
         </div>
         <hr/>
-        <p>Generate thumbnails based on the existing images</p>
+        
+        <h3>Generate Thumbnails</h3>
         <p>Note: The global folder is 'images/portfolio/' You just need to specify its subfolder (i.e. 'Before and After')</p>
-        <input type="text" id="thumbnailpath" placeholder="Testing">
+        <div class="form-group">
+            <label>Folder Name:</label>
+            <input type="text" class="form-control" id="thumbnailpath" placeholder="Testing">
+        </div>
+        <div class="form-group">
+            <label>Width (400px if not specified)</label>
+            <input type="text" class="form-control" id="thumbnailwidth" placeholder="400">
+        </div>
+        <div class="form-group">
+            <label>Height (300px if not specified)</label>
+            <input type="text" class="form-control" id="thumbnailheight" placeholder="300">
+        </div>            
         <button type="button" id="thumbgenerator" class="btn btn-default" value="Generate Thumbnails" data-loading-text="Loading..." autocomplete="off">
-            Generate Thumbnails
-        </button><br/>
+            Generate Thumbnails</button>
+        <br/>
         <div id="alertsection" class="alert" role="alert"> 
             <p class="result"></p>
         </div>

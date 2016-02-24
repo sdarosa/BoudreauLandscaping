@@ -8,7 +8,7 @@
                         <ul class="list-inline list-unstyled">
                             <li><a href="?action=index.php">Home</a></li>
                             <li><a href="?action=services.php">Services</a></li>
-                            <li><a href="?action=allwork.php">Work</a></li>
+                            <li><a href="?action=bef_after.php">Work</a></li>
                             <li><a href="?action=about.php">About</a></li>
                             <li><a href="?action=contact.php">Contact</a></li>
                             <li><a target="_blank" href="https://www.facebook.com/BoudreauBrosLandscaping/"><img src="images/facebook-28-white.png" /></a>
