@@ -26,7 +26,7 @@ if(!file_exists($path . '/thumbnails')) {
 }
 //create new thumbnails
 $x = 0;
-$newFiles = [];
+$newFiles = array();
 foreach($files as $imgName) {
     if(!file_exists($path . '/thumbnails/' . $imgName)) {
         imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height);

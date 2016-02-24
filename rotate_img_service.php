@@ -32,7 +32,7 @@ if(!file_exists($path . '/thumbnails')) {
 }
 
 $x=0;
-$modifiedFiles = [];
+$modifiedFiles = array();
 foreach($files as $f) {
     $extensionjpg = strtolower(substr($f, -3));
     $extensionjpeg = strtolower(substr($f, -4));
