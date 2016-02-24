@@ -29,7 +29,7 @@ function getAllImageNames($path) {
     return $image_names;
 }
 
-function imageResize($image, $new_filename, $dest_path, $w, $h) {      
+function imageResize($image, $new_filename, $dest_path, $w=400, $h=300) {     
     //check if gd extension is loaded
     if(!extension_loaded('gd') && !extension_loaded('gd2')) {
         trigger_error('gd is not loaded', E_USER_WARNING);
@@ -153,10 +153,11 @@ function imageFixOrientation($path) {
                 trigger_error('Failed to resize image', E_USER_WARNING);                
         }          
     } else {
-        return;
+        return;        
     }
 
 }
+
 
 
 

@@ -1,27 +1,31 @@
 <?php include 'section-top.php'; ?>
 <?php require 'helper.php'; ?>
-<?php
-    //imageResize('images/portfolio/009.jpg', 400, '009_thumb.jpg');
 
-?>
 <body>
-    <div class="container text-center">
+    <div class="container">
         <h1>Image Manager</h1>  
         <hr/>
-        <h3>Rotates Images</h3>
-        <p>Rotates images if orientation is not correct.</p>        
-        <button type="button" id="imageorientationcorrector" class="btn btn-default" data-loading-text="Loading..." autocomplete="off">
+        <h3 class="blue">Rotates Images</h3>
+        <p><strong>Description:</strong> Rotates images in specified folder if orientation is not correct. It will also update its thumbnails.</p>    
+        <p class="bg-warning"><strong>Note:</strong> The global folder is 'images/portfolio/' You just need to specify its subfolder (i.e. 'Before and After') which must exist.</p>
+        <div class="form-group">
+            <label>Folder Name:</label>            
+            <input type="text" class="form-control" id="rotatefoldername" placeholder="Testing">
+        </div>
+        <button type="button" id="imageorientationcorrector" class="btn btn-primary" data-loading-text="Loading..." autocomplete="off">
             Correct Image Orientation</button>
         <br/>
         <div id="imageorientationalert" class="alert" role="alert">
             <p class="imageorientationresult"></p>
         </div>
+        
         <hr/>
         
-        <h3>Generate Thumbnails</h3>
-        <p>Note: The global folder is 'images/portfolio/' You just need to specify its subfolder (i.e. 'Before and After')</p>
-        <div class="form-group">
-            <label>Folder Name:</label>
+        <h3 class="blue">Generate Thumbnails</h3>  
+        <p><strong>Description:</strong> Creates thumbnails of all new images in a specified folder.</p>
+        <p class="bg-warning"><strong>Note:</strong> The global folder is 'images/portfolio/' You just need to specify its subfolder (i.e. 'Before and After') which must exist.</p>
+        <div class="form-group">            
+            <label>Folder Name:</label>            
             <input type="text" class="form-control" id="thumbnailpath" placeholder="Testing">
         </div>
         <div class="form-group">
@@ -32,7 +36,7 @@
             <label>Height (300px if not specified)</label>
             <input type="text" class="form-control" id="thumbnailheight" placeholder="300">
         </div>            
-        <button type="button" id="thumbgenerator" class="btn btn-default" value="Generate Thumbnails" data-loading-text="Loading..." autocomplete="off">
+        <button type="button" id="thumbgenerator" class="btn btn-primary" value="Generate Thumbnails" data-loading-text="Loading..." autocomplete="off">
             Generate Thumbnails</button>
         <br/>
         <div id="alertsection" class="alert" role="alert"> 
@@ -45,23 +49,35 @@
             $('#thumbgenerator').click(function() {
                 var $btn = $(this).button('loading');     
                 var $folderName = $('#thumbnailpath').val();
+                var $thumbWidth = $('#thumbnailwidth').val();
+                var $thumbHeight = $('#thumbnailheight').val();
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     url: 'generate_thumbs.php',
                     data: {
-                        folderName : $folderName
+                        folderName : $folderName,
+                        thumbWidth : $thumbWidth,
+                        thumbHeight : $thumbHeight
                     },
                     success: function(data) {    
                         $('#alertsection').removeClass('alert-danger');
                         $('#alertsection').addClass('alert-success');
-                        $('.result').text('Successfully created ' + data.filecount + ' thumbnails');
+                        if(data.fileCount != 0) {
+                            $('.result').text('Successfully created ' + data.fileCount + ' thumbnail(s) on ' + data.folderName + '/thumbnails folder.');
+                        } else {
+                            $('.result').text('All thumbnails already exist. No new thumbnails created on ' + data.folderName + '/thumbnails folder.');
+                        }                        
+                        var x;
+                        for(x in data.fileNames) {
+                            $('.result').append('<br/>' + data.fileNames[x]);
+                        }
                         $btn.button('reset');
                     },
                     error: function(err) {
                         $('#alertsection').removeClass('alert-success');
                         $('#alertsection').addClass('alert-danger');
-                        $('.result').text('Error trying to create thumbnails: ' + err.status);  
+                        $('.result').text('Error trying to create thumbnails: ' + err.status + ': ' + err.statusText + '. ' + err.responseText);  
                         $btn.button('reset');
                     }
                 });                
@@ -69,14 +85,22 @@
             
             $('#imageorientationcorrector').click(function() {
                var $btn = $(this).button('loading');
+               var $folderName = $('#rotatefoldername').val();
                $.ajax({
                    type: 'POST',
                    dataType: 'json',
                    url: 'rotate_img_service.php',
+                   data: {
+                       folderName : $folderName
+                   },
                    success: function(data) {
                        $('#imageorientationalert').removeClass('alert-danger');
                        $('#imageorientationalert').addClass('alert-success');
-                       $('.imageorientationresult').text('Successfully processed ' + data.fileCount + ' images.');
+                       $('.imageorientationresult').text('Successfully processed ' + data.fileCount + ' images on folder ' + data.folderName + '.');
+                       var x;
+                       for(x in data.fileNames) {
+                            $('.imageorientationresult').append('<br/>' + data.fileNames[x]);
+                       }
                        $btn.button('reset');
                    },
                    error: function(err) {
