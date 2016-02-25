@@ -305,6 +305,12 @@ p.navbar-text img{
         min-height: 840px;
     }
 }
+
+@media screen and (min-width: 768px) {
+    .carousel-caption {
+        padding-bottom: 40px!important;        
+    }
+}
 @media(max-width: 767px) {    
     #boudreaunavbar.navbar-collapse.in {         
         background: #fff;
