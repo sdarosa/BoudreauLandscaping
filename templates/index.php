@@ -143,22 +143,22 @@
                 <h1>MOST RECENT <span class="red">WORK</span></h1>
                 <div class="row">
                     <div class="col-xs-6 thumb">
-                        <a class="thumbnail" href="?action=allwork.php">
+                        <a class="thumbnail" href="?action=galleries.php&type=All%20Work">
                             <img class="img-responsive" src="images/thumb_project011.jpg">
                         </a>
                     </div>
                     <div class="col-xs-6 thumb">
-                        <a class="thumbnail" href="?action=allwork.php">
+                        <a class="thumbnail" href="?action=galleries.php&type=All%20Work">
                             <img class="img-responsive" src="images/thumb_project021.jpg">
                         </a>
                     </div>
                     <div class="col-xs-6 thumb">
-                        <a class="thumbnail" href="?action=allwork.php">
+                        <a class="thumbnail" href="?action=galleries.php&type=All%20Work">
                             <img class="img-responsive" src="images/thumb_project031.jpg">
                         </a>
                     </div>
                    <div class="col-xs-6 thumb">
-                        <a class="thumbnail" href="?action=allwork.php">
+                        <a class="thumbnail" href="?action=galleries.php&type=All%20Work">
                             <img class="img-responsive" src="images/thumb_project041.jpg">
                         </a>
                     </div>

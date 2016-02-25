@@ -3,7 +3,7 @@
 //returns an array of directory names in a given path
 function getImageDirectories($path) {
     $elements = scandir($path);
-    $directories = [];    
+    $directories = array(); 
     foreach($elements as $e) {
         if($e == '.' || $e == '..') continue;
         if(is_dir($path . '/' . $e)) {
@@ -17,12 +17,13 @@ function getAllImageNames($path) {
     //'images/portfolio/thumbnails'
     $directory = $path;
     $files =  scandir($directory);
-    $image_names = [];
+    $image_names = array();
 
     for($x=0; $x < count($files); $x++) { 
         $file_extension = strtolower(substr($files[$x], -3));        
         if(($file_extension == 'jpg') || ($file_extension == 'png') || ($file_extension == 'gif')) {    
-            array_push($image_names, $files[$x]);         
+            //array_push($image_names, $files[$x]);         
+            $image_names[] = $files[$x];
         }
     }  
     
