@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width" />
         <meta charset="UTF-8"> 
+        <!-- favicon -->
+        <link rel="icon" href="http://boudreaubros.com/images/favicon.ico">
         <!-- Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600' rel='stylesheet' type='text/css'>
