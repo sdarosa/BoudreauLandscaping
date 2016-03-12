@@ -16,29 +16,39 @@ if($folder == "Before and After") {
 
 //extend the maximum execution time
 ini_set('max_execution_time', 300); //5 minutes
-
+//
 //if folder specified does not exist, stop execution.
-if(!file_exists($path)) return;
-
-//if folder 'thumbnails' does not exist, create one.
-if(!file_exists($path . '/thumbnails')) {    
-    mkdir($path . '/thumbnails');    
-}
-//create new thumbnails
-$x = 0;
-$newFiles = array();
-foreach($files as $imgName) {
-    if(!file_exists($path . '/thumbnails/' . $imgName)) {
-        imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height);
-        array_push($newFiles, $imgName);
-        $x++;
-    }    
+if(!file_exists($path)) {    
+    $x = -1;
+    $newFiles = null; 
+    $errorMsg = "Error: Directory does not exist.";
+} else if(isDirEmpty($path)) {    
+    $x = -1;
+    $newFiles = null; 
+    $errorMsg = "Error: Directory '" . $folder . "' is empty.";
+} else {
+    //if folder 'thumbnails' does not exist, create one.
+    if(!file_exists($path . '/thumbnails')) {    
+        mkdir($path . '/thumbnails');    
+    }
+    //create new thumbnails
+    $x = 0;
+    $newFiles = array();
+    foreach($files as $imgName) {
+        if(!file_exists($path . '/thumbnails/' . $imgName)) {
+            imageResize($path . '/' . $imgName, $imgName, $path . '/thumbnails/', $width, $height);
+            array_push($newFiles, $imgName);
+            $x++;
+        }    
+    }
+    $errorMsg = null;
 }
 
 $result = array(
     'folderName' => $folder,
     'fileCount' => $x,
-    'fileNames' => $newFiles
+    'fileNames' => $newFiles,
+    'errorMsg' => $errorMsg
 );
 echo json_encode($result);
 

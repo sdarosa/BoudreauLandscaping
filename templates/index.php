@@ -16,13 +16,7 @@
                 <p>Make Your Dream Garden Come True!<br/>Get a Free Quote Now!</p>
                 <a type="button" class="btn btn-danger" href="?action=contact.php">Contact Us</a>
               </div>
-            </div>
-            <div class="item">
-                <img src="images/hero03.jpg" alt="pavers and garden">             
-            </div>  
-            <div class="item">
-              <img src="images/hero02.jpg" alt="crew working">             
-            </div>           
+            </div>                   
           </div>
 
           <!-- Controls -->
