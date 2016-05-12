@@ -6,7 +6,7 @@ $phone = $_POST['phone'];
 $message = $_POST['message'];
 
 //create the email & send the message
-$to = 'info@boudreaubros.com';
+$to = 'stephania.darosa@gmail.com';
 $email_subject = "Boudreau Landscaping Contact Form: $name";
 $email_body = "You have received a new message from the Boudreau Landscaping Website Contact Form.\n\n" .
               "Here are the details:\n\n" .
